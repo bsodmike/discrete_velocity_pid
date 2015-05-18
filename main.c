@@ -31,11 +31,10 @@ class PID
     float deriv;         // Previous setpoint error
 };
 
-float calcStep(PID *pid);
+void calcStep(PID *pid);
 
-float calcStep(PID *pid) {
+void calcStep(PID *pid) {
   float q0, q1, q2 = 0;
-
 
   pid->e2 = pid->e1;
   pid->e1 = pid->e0;
@@ -62,8 +61,6 @@ float calcStep(PID *pid) {
     pid->output = 0;
   }
   cout << "absolute control: " << pid->output << "\n\n";
-
-  return 2.1;
 }
 
 int main (){
