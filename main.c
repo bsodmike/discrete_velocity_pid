@@ -39,7 +39,7 @@ void calcStep(PID *pid) {
   pid->e2 = pid->e1;
   pid->e1 = pid->e0;
   // Assume the A/D reading is exactly that of the previous output
-  pid->e0 = pid->setpt - (pid->output * 0.01);
+  pid->e0 = pid->setpt - (pid->output * 0.1);
   cout << "e0: " << pid->e0 << ", e1: " << pid->e1 << ", e2: " << pid->e2 << '\n';
 
   q0 = pid->Kp * (1 + (pid->delT/pid->Ti) + (pid->Td/pid->delT));
@@ -65,16 +65,16 @@ void calcStep(PID *pid) {
 
 int main (){
   PID pid;
-  pid.Kp = 5;
-  pid.Ti = 100;
-  pid.Td = 40;
+  pid.Kp = 4;
+  pid.Ti = 72;
+  pid.Td = 0.01;
   pid.delT = 10;
   pid.e0 = pid.e1 = pid.e2 = 0;
 
-  pid.setpt = 800;
+  pid.setpt = 1000;
   pid.input = 20;
   pid.output = 80;
-  pid.output_max = 1000;
+  pid.output_max = 2000;
 
   ofstream plot;
   plot.open("plot.dat");

@@ -2,7 +2,7 @@
 
 for FILE in *.dat; do
   gnuplot <<- EOF
-  set yrange [0:1200]
+  set yrange [0:2200]
   set term png
   set output "output.png"
   plot "${FILE}" using 1:2 with linespoints title 'output',\
