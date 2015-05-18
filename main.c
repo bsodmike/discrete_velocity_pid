@@ -1,4 +1,4 @@
-/* Name: main.cpp
+/* Name: main.c
  * Author: Michael de Silva <michael@mwdesilva.com>
  * Copyright: MIT License
  */
