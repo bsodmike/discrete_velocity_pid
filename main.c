@@ -56,7 +56,7 @@ int main (){
 
   for(int i = 0; i < 40; i++){
     pid.computeStep();
-    plot << i << '\t' << pid.output << '\t' << pid.e0 << '\t' << pid.e1 << '\t' << pid.e2  << '\n';
+    plot << i << '\t' << pid.output << '\t' << (pid.output*0.1) << '\t' << pid.e0 << '\t' << pid.e1 << '\t' << pid.e2  << '\n';
   }
 
   plot.close();
