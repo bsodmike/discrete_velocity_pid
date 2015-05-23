@@ -19,4 +19,5 @@ public:
   float e0, e1, e2;
 
   void computeStep();
+  void setGains();
 };
